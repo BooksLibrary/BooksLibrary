@@ -11,6 +11,27 @@
 
     public class User : IdentityUser
     {
+        private ICollection<Book> books;
+        private ICollection<Comment> comments;
+
+        public User()
+        {
+            this.books = new HashSet<Book>();
+            this.comments = new HashSet<Comment>();
+        }
+
+        public virtual ICollection<Book> Books
+        {
+            get { return this.books; }
+            set { this.books = value; }
+        }
+
+        public virtual ICollection<Comment> Comments
+        {
+            get { return this.comments; }
+            set { this.comments = value; }
+        }
+
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
