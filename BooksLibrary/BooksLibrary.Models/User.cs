@@ -4,6 +4,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Security.Claims;
     using System.Text;
@@ -19,6 +20,14 @@
             this.books = new HashSet<Book>();
             this.comments = new HashSet<Comment>();
         }
+
+        [MinLength(1)]
+        [MaxLength(50)]
+        public string FirstName { get;  set; }
+
+        [MinLength(1)]
+        [MaxLength(50)]
+        public string LastName { get; set; }
 
         public virtual ICollection<Book> Books
         {
