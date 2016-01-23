@@ -16,25 +16,69 @@ namespace BooksLibrary.Web.Categories
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CategoriesListView.DataSource = categories.All().ToArray();
-            CategoriesListView.DataBind();
+            //CategoriesListView.DataSource = categories.All().ToArray();
+            //CategoriesListView.DataBind();
         }
 
-        protected void CategoriesListView_ItemEditing(object sender, ListViewEditEventArgs e)
+        // The return type can be changed to IEnumerable, however to support
+        // paging and sorting, the following parameters must be added:
+        //     int maximumRows
+        //     int startRowIndex
+        //     out int totalRowCount
+        //     string sortByExpression
+        public IQueryable<Category> CategoriesListView_GetData()
         {
-            CategoriesListView.EditIndex = e.NewEditIndex;
-            CategoriesListView.DataSource = categories.All().ToArray();
-            CategoriesListView.DataBind();
+            return categories.All();
         }
 
-        protected void CategoriesListView_ItemCanceling(object sender, ListViewCancelEventArgs e)
+        public void CategoriesListView_InsertItem(Category category)
         {
-
+            var item = category;
+            categories.Add(category);
+            if (ModelState.IsValid)
+            {
+                categories.SaveChanges();
+            }
         }
 
-        protected void CategoriesListView_ItemUpdating(object sender, ListViewUpdateEventArgs e)
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void CategoriesListView_DeleteItem(int id)
         {
+            var categoryToDelete = categories.All()
+                .FirstOrDefault(c => c.Id == id);
+
+            if (categoryToDelete == null)
+            {
+                ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
+                return;
+            }
+
+            categories.Delete(categoryToDelete);
             categories.SaveChanges();
+        }
+
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void CategoriesListView_UpdateItem(int id)
+        {
+            var item = categories.All()
+                .FirstOrDefault(c => c.Id == id);
+
+            // Load the item here, e.g. item = MyDataLayer.Find(id);
+            if (item == null)
+            {
+                // The item wasn't found
+                ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
+                return;
+            }
+            TryUpdateModel(item);
+            if (ModelState.IsValid)
+            {
+                categories.SaveChanges();
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid category name");
+            }
         }
     }
 }
