@@ -11,16 +11,6 @@
         ItemType="BooksLibrary.Models.Category"
         DataKeyNames="Id"
         runat="server">
-        <LayoutTemplate>
-            <table runat="server" class="table table-striped table-hover">
-                <tr runat="server" id="itemPlaceholder" />
-            </table>
-            <asp:DataPager ID="lvDataPager1" runat="server" PagedControlID="CategoriesListView" PageSize="2" class="pagination">
-                <Fields>
-                    <asp:NumericPagerField ButtonType="Link" />
-                </Fields>
-            </asp:DataPager>
-        </LayoutTemplate>
         <ItemTemplate>
             <tr runat="server">
                 <td><%# Item.Name  %></td>
