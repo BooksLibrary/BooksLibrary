@@ -3,6 +3,7 @@ using BooksLibrary.Models;
 using ChatSystem.Data.Repository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -50,6 +51,43 @@ namespace BooksLibrary.Web.Authors
             if (ModelState.IsValid)
             {
                 this.authors.SaveChanges();
+            }
+        }
+
+        protected string GetImageUrl()
+        {
+            var author = this.authors.GetById(this.id);
+            var existingFilePath = Server.MapPath(author.ImageUrl);
+
+            if (File.Exists(existingFilePath))
+            {
+                return author.ImageUrl;
+            }
+            else
+            {
+                return "~/Uploads/authorImages/default.jpg";
+            }
+        }
+
+        protected void FileUploadButton_Click(object sender, EventArgs e)
+        {
+            var author = this.authors.GetById(this.id);
+            var control = this.AuthorDetailsView.FindControl("FileControl") as FileUpload;
+            var fileName = control.FileName;
+            var fileExtension = fileName.Substring(fileName.LastIndexOf("."));
+            var existingFilePath = Server.MapPath(author.ImageUrl);
+
+            if (control.HasFile)
+            {
+                if (author.ImageUrl != null && File.Exists(existingFilePath))
+                {
+                    File.Delete(existingFilePath);
+                }
+
+                var saveToPath = "~/Uploads/authorImages/" + Guid.NewGuid() + fileExtension;
+                control.SaveAs(MapPath(saveToPath));
+                author.ImageUrl = saveToPath;
+                authors.SaveChanges();
             }
         }
     }

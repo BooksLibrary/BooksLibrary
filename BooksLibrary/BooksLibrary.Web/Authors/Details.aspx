@@ -11,6 +11,7 @@
                 <ItemTemplate>
                     <div class="jumbotron">
                         <h1><%#: Item.Name %></h1>
+                        <asp:Image ImageUrl="<%# this.GetImageUrl() %>" runat="server" ID="AuthorImageContainer"></asp:Image>
                         <p><%#: Item.Info %></p>
                         <asp:Button runat="Server" Text="Edit" CommandName="Edit" class="btn btn-primary" />
                         <asp:Button runat="Server" Text="Delete" CommandName="Delete" class="btn btn-danger " />
@@ -21,6 +22,12 @@
                     <div class="form-horizontal">
                         <fieldset>
                             <legend>Edit Author</legend>
+                            <div class="form-group">
+                                <label for="AuthorImageContainer" class="col-lg-2 control-label">Image</label>
+                                <div class="col-lg-10">
+                                    <asp:Image ImageUrl="<%# (Item.ImageUrl) %>" runat="server" ID="AuthorImageContainer"></asp:Image>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="AuthorNameUpdateInput" class="col-lg-2 control-label">Name</label>
                                 <div class="col-lg-10">
@@ -37,6 +44,12 @@
                                 <div class="col-lg-10 col-lg-offset-2">
                                     <asp:Button runat="server" Text="Update" CommandName="Update" class="btn btn-primary" />
                                     <asp:Button runat="Server" Text="Cancel" CommandName="Cancel" class="btn btn-default" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <asp:FileUpload runat="server" ID="FileControl" class="btn btn-primary" />
+                                    <asp:Button runat="Server" Text="Upload" OnClick="FileUploadButton_Click" class="btn btn-default" />
                                 </div>
                             </div>
                         </fieldset>

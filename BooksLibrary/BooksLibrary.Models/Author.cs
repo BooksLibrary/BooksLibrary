@@ -22,6 +22,8 @@ namespace BooksLibrary.Models
         [MinLength(5)]
         [MaxLength(500)]
         public string Info { get; set; }
+                
+        public string ImageUrl { get; set; }
 
         public virtual ICollection<Book> Books
         {
