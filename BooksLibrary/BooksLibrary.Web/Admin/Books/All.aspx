@@ -5,10 +5,9 @@
         SelectMethod="BooksListView_GetData"
         UpdateMethod="BooksListView_UpdateItem"
         DeleteMethod="BooksListView_DeleteItem"
-        OnItemCanceling="BooksListView_ItemCanceling"
         ItemType="BooksLibrary.Models.Book"
         DataKeyNames="Id"
-        runat="server">
+        runat="server" OnSelectedIndexChanged="BooksListView_SelectedIndexChanged">
         <LayoutTemplate>
             <h1>Books</h1>
             <table class="table table-striped table-hover">
@@ -28,7 +27,7 @@
                 <td><%#: Item.Title %></td>
                 <td><%#: Item.Description %></td>
                 <td><%#: Item.DateAdded %></td>
-                <td><a href="<%#  GetFileUrl(Item)%>"></a>File</td>
+                <td><a href="<%# MapPath(Item.FileUrl) %>">File</a></td>
             </tr>
         </ItemTemplate>
         <EditItemTemplate>
@@ -58,10 +57,10 @@
                         <asp:DropDownList SelectedValue="<%# BindItem.CategoryId %>" ID="CategoryInput" DataValueField="Id" DataTextField="Name" class="form-control" SelectMethod="GetCategories" runat="server"></asp:DropDownList>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="DescriptionInput" class="col-lg-2 control-label">File</label>
+                <div class="form-group" runat="server">
+                    <label for="FileInput" class="col-lg-2 control-label">File</label>
                     <div class="col-lg-10">
-                        <asp:FileUpload runat="server" class="form-control" ID="FileInput" />
+                        <asp:FileUpload runat="server" ID="FileInput" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -71,7 +70,6 @@
                         <asp:Button runat="server" CommandName="Cancel" ID="CancelButton" Text="Cancel" class="btn btn-default" />
                     </div>
                 </div>
-
             </div>
         </EditItemTemplate>
     </asp:ListView>

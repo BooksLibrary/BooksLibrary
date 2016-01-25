@@ -90,5 +90,13 @@ namespace BooksLibrary.Web.Authors
                 authors.SaveChanges();
             }
         }
+
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void AuthorDetailsView_DeleteItem(int id)
+        {
+            this.authors.Delete(id);
+            this.authors.SaveChanges();
+            this.Response.Redirect("/admin/authors/all");
+        }
     }
 }

@@ -3,6 +3,7 @@ using BooksLibrary.Models;
 using ChatSystem.Data.Repository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -52,15 +53,35 @@ namespace BooksLibrary.Web.Admin.Books
         // The id parameter name should match the DataKeyNames value set on the control
         public void BooksListView_UpdateItem(int id)
         {
-            Book item = this.books.GetById(id);
+            Book book = this.books.GetById(id);
             // Load the item here, e.g. item = MyDataLayer.Find(id);
-            if (item == null)
+            if (book == null)
             {
                 // The item wasn't found
                 ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
                 return;
             }
-            TryUpdateModel(item);
+
+            TryUpdateModel(book);
+
+            var fileContainer = (FileUpload)this.BooksListView.FindControl("FileInput");
+
+            if (fileContainer.HasFile)
+            {
+                var fileName = Guid.NewGuid();
+                var extension = fileContainer.FileName.Substring(fileContainer.FileName.LastIndexOf("."));
+
+                if (book.FileUrl != null && File.Exists(MapPath(book.FileUrl)))
+                {
+                    File.Delete(MapPath(book.FileUrl));
+                }
+
+                var saveToUrl = "~/Uploads/books/" + fileName + extension;
+
+                book.FileUrl = saveToUrl;
+                fileContainer.SaveAs(saveToUrl);
+            }
+
             if (ModelState.IsValid)
             {
                 this.books.SaveChanges();
@@ -85,7 +106,7 @@ namespace BooksLibrary.Web.Admin.Books
             }
         }
 
-        protected void BooksListView_ItemCanceling(object sender, ListViewCancelEventArgs e)
+        protected void BooksListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
