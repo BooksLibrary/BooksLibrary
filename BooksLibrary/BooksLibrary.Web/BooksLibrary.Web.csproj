@@ -207,6 +207,7 @@
     <Content Include="Admin\Authors\All.aspx" />
     <Content Include="Admin\Authors\Details.aspx" />
     <Content Include="Admin\Categories\All.aspx" />
+    <Content Include="Books\Details.aspx" />
     <Content Include="Categories\All.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -450,6 +451,13 @@
     </Compile>
     <Compile Include="Admin\Categories\All.aspx.designer.cs">
       <DependentUpon>All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Books\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Books\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categories\All.aspx.cs">
       <DependentUpon>All.aspx</DependentUpon>
