@@ -15,7 +15,7 @@
             <table runat="server" class="table table-striped table-hover">
                 <tr runat="server" id="itemPlaceholder" />
             </table>
-            <asp:DataPager ID="lvDataPager1" runat="server" PagedControlID="CategoriesListView" PageSize="2" class="pagination">
+            <asp:DataPager ID="lvDataPager1" runat="server" PagedControlID="CategoriesListView" PageSize="5" class="pagination">
                 <Fields>
                     <asp:NumericPagerField ButtonType="Link" />
                 </Fields>
@@ -44,6 +44,7 @@
         <InsertItemTemplate>
             <td>
                 <asp:TextBox runat="server" class="form-control" ID="CategoryUpdatedName" Text="<%# BindItem.Name %>"></asp:TextBox>
+                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="CategoryUpdatedName" ValidationExpression="^.{2,10}$" runat="server" ErrorMessage="Category must be between 2 and 10 characters!" class="text-primary"></asp:RegularExpressionValidator>
             </td>
             <td>
                 <asp:Button runat="server" CommandName="Insert" Text="Insert" class="btn btn-success" />
