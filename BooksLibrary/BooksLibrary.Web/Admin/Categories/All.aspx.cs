@@ -39,6 +39,10 @@ namespace BooksLibrary.Web.Categories
             {
                 categories.SaveChanges();
             }
+            else
+            {
+                ModelState.AddModelError("Error", "Invalid Category name");
+            }
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
