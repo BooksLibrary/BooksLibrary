@@ -200,6 +200,8 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Books\All.aspx" />
+    <Content Include="Authors\All.aspx" />
+    <Content Include="Authors\Details.aspx" />
     <Content Include="Categories\All.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -388,12 +390,19 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Books\All.aspx.cs">
+    <Compile Include="Authors\All.aspx.cs">
       <DependentUpon>All.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Books\All.aspx.designer.cs">
+    <Compile Include="Authors\All.aspx.designer.cs">
       <DependentUpon>All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categories\All.aspx.cs">
       <DependentUpon>All.aspx</DependentUpon>
@@ -446,6 +455,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BooksLibrary.Data\BooksLibrary.Data.csproj">
