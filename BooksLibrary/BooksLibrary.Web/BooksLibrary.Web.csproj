@@ -200,9 +200,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Books\All.aspx" />
-    <Content Include="Authors\All.aspx" />
-    <Content Include="Authors\Details.aspx" />
-    <Content Include="Categories\All.aspx" />
+    <Content Include="Admin\Authors\All.aspx" />
+    <Content Include="Admin\Authors\Details.aspx" />
+    <Content Include="Admin\Categories\All.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -390,18 +390,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Authors\All.aspx.cs">
+    <Compile Include="Admin\Authors\All.aspx.cs">
       <DependentUpon>All.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Authors\All.aspx.designer.cs">
+    <Compile Include="Admin\Authors\All.aspx.designer.cs">
       <DependentUpon>All.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Authors\Details.aspx.cs">
+    <Compile Include="Admin\Authors\Details.aspx.cs">
       <DependentUpon>Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Authors\Details.aspx.designer.cs">
+    <Compile Include="Admin\Authors\Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Books\All.aspx.cs">
@@ -411,11 +411,11 @@
     <Compile Include="Books\All.aspx.designer.cs">
       <DependentUpon>All.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Categories\All.aspx.cs">
+    <Compile Include="Admin\Categories\All.aspx.cs">
       <DependentUpon>All.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Categories\All.aspx.designer.cs">
+    <Compile Include="Admin\Categories\All.aspx.designer.cs">
       <DependentUpon>All.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
