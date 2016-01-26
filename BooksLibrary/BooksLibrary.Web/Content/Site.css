@@ -37,26 +37,10 @@ input[type="select"] {
     }
 }
 
-<<<<<<< HEAD
 #MainContent_BookDetailsView1 td{
     width: 40%;
     text-align: center;
 }
-
-/*#MainContent_BookDetailsView1 td{
-    width: 80%;
-}
-
-#MainContent_BookDetailsView1 td .pull-right img{
-    width: 200px;
-    height: 100px;
-}
-
-#MainContent_BookDetailsView1 td .pull-left p{
-    width: 400px;
-    height: 100px;
-    overflow-y: scroll;
-}*/
 
 #notFoundWrapper {
     color: #FF2020;
