@@ -37,6 +37,7 @@ input[type="select"] {
     }
 }
 
+<<<<<<< HEAD
 #MainContent_BookDetailsView1 td{
     width: 40%;
     text-align: center;
@@ -56,3 +57,8 @@ input[type="select"] {
     height: 100px;
     overflow-y: scroll;
 }*/
+
+#notFoundWrapper {
+    color: #FF2020;
+}
+
