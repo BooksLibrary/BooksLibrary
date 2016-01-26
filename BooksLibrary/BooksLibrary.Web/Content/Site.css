@@ -32,13 +32,13 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
 }
 
-<<<<<<< HEAD
-#MainContent_BookDetailsView1 td{
+<<<<<<< HEAD #MainContent_BookDetailsView1 td {
     width: 40%;
     text-align: center;
 }
@@ -62,3 +62,6 @@ input[type="select"] {
     color: #FF2020;
 }
 
+.author-thumbnail {
+    height: 100px;
+}
