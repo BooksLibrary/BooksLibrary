@@ -98,5 +98,10 @@ namespace BooksLibrary.Web.Authors
             this.authors.SaveChanges();
             this.Response.Redirect("/admin/authors/all");
         }
+
+        protected void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Response.Redirect("/admin/authors/all");
+        }
     }
 }
