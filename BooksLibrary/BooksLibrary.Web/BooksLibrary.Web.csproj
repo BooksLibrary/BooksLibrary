@@ -203,6 +203,8 @@
     <Content Include="Admin\Books\All.aspx" />
     <Content Include="Admin\Books\Details.aspx" />
     <Content Include="Admin\Books\Insert.aspx" />
+    <Content Include="Authors\All.aspx" />
+    <Content Include="Authors\Details.aspx" />
     <Content Include="Books\All.aspx" />
     <Content Include="Admin\Authors\All.aspx" />
     <Content Include="Admin\Authors\Details.aspx" />
@@ -441,6 +443,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Authors\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\All.aspx.cs">
+      <DependentUpon>All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\All.aspx.designer.cs">
+      <DependentUpon>All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Books\All.aspx.cs">
