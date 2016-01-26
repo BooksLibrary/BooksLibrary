@@ -26,6 +26,8 @@ namespace BooksLibrary.Models
         [MaxLength(500)]
         public string Description { get; set; }
 
+        public string FileUrl { get; set; }
+
         [Required]
         public DateTime DateAdded { get; set; }
 
@@ -36,7 +38,7 @@ namespace BooksLibrary.Models
         public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
-                
+
         public int NumberOfReads { get; set; }
 
         public virtual ICollection<Comment> Comments

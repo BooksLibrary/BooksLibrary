@@ -1,16 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Insert.aspx.cs" Inherits="BooksLibrary.Web.Admin.Authors.Insert" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Insert.aspx.cs" Inherits="BooksLibrary.Web.Admin.Authors.Insert" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+<asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    <fieldset class="form-horizontal">
+        <legend>Legend</legend>
+        <div class="form-group">
+            <label for="AuthorNameInput" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+                <asp:TextBox runat="server" ID="AuthorNameInput" class="form-control"></asp:TextBox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="AuthorInfoInput" class="col-lg-2 control-label">Info</label>
+            <div class="col-lg-10">
+                <asp:TextBox TextMode="MultiLine" runat="server" ID="AuthorInfoInput" class="form-control"></asp:TextBox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="AuthorImageInput" class="col-lg-2 control-label">Image</label>
+            <div class="col-lg-10">
+                <asp:FileUpload runat="server" ID="AuthorImageInput" class="form-control"></asp:FileUpload>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <asp:Button runat="server" ID="CreateAuthor" class="btn btn-primary" OnClick="CreateAuthor_Click" Text="Add"></asp:Button>
+                <asp:Button runat="server" ID="CancelButton" class="btn btn-default" OnClick="CancelButton_Click" Text="Cancel"></asp:Button>
+            </div>
+        </div>
+    </fieldset>
+</asp:Content>

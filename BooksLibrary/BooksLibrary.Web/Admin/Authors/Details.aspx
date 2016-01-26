@@ -1,11 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Details.aspx.cs" Inherits="BooksLibrary.Web.Authors.Details" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <asp:DetailsView runat="server" ID="AuthorDetailsView" ItemType="BooksLibrary.Models.Author"
-        DataKeyNames="Id"
-        AutoGenerateRows="False"
-        SelectMethod="AuthorDetailsView_GetItem"
-        UpdateMethod="AuthorDetailsView_UpdateItem" BorderStyle="None">
+    <asp:detailsview runat="server" id="AuthorDetailsView" itemtype="BooksLibrary.Models.Author"
+        datakeynames="Id"
+        autogeneraterows="False"
+        selectmethod="AuthorDetailsView_GetItem"
+        updatemethod="AuthorDetailsView_UpdateItem"
+        deletemethod="AuthorDetailsView_DeleteItem"
+        borderstyle="None">
         <Fields>
             <asp:TemplateField>
                 <ItemTemplate>
@@ -42,8 +44,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-2">
-                                    <asp:Button runat="server" Text="Update" CommandName="Update" class="btn btn-primary" />
-                                    <asp:Button runat="Server" Text="Cancel" CommandName="Cancel" class="btn btn-default" />
+                                    <asp:Button runat="server" Text="Update" CommandName="Update" class="btn btn-primary"/>
+                                    <asp:Button runat="Server" Text="Cancel" OnClick="CancelButton_Click" CommandName="Cancel" ID="CancelButton" class="btn btn-default" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -57,5 +59,5 @@
                 </EditItemTemplate>
             </asp:TemplateField>
         </Fields>
-    </asp:DetailsView>
+    </asp:detailsview>
 </asp:Content>

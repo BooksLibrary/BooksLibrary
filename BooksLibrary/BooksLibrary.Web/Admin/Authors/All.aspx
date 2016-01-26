@@ -13,7 +13,7 @@
             <Columns>
                 <asp:BoundField DataField="Name" HeaderText="Author Name" SortExpression="Name" />
                 <asp:HyperLinkField HeaderText="Details" Text="Details"
-                    DataNavigateUrlFields="Id" DataNavigateUrlFormatString="/Authors/Details.aspx?id={0}" />
+                    DataNavigateUrlFields="Id" DataNavigateUrlFormatString="/admin/Authors/Details.aspx?id={0}" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
