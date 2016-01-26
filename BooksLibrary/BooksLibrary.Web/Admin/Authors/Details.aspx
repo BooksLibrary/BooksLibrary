@@ -6,7 +6,7 @@
         AutoGenerateRows="False"
         SelectMethod="AuthorDetailsView_GetItem"
         UpdateMethod="AuthorDetailsView_UpdateItem" 
-        DeleteMethod="AuthorDetailsView_DeleteItem"
+        DeleteMethod="AuthorDetailsView_DeleteItem"        
         BorderStyle="None">
         <Fields>
             <asp:TemplateField>

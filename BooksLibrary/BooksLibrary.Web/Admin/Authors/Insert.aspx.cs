@@ -49,5 +49,10 @@ namespace BooksLibrary.Web.Admin.Authors
                 // Handle error
             }
         }
+
+        protected void CancelButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/admin/authors/all");
+        }
     }
 }

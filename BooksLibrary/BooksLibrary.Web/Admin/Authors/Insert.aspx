@@ -22,9 +22,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="AuthorInfoInput" class="col-lg-2 control-label">Email</label>
-            <div class="col-lg-10">
-                <asp:Button runat="server" ID="CreateAuthor" class="btn btn-primary" OnClick="CreateAuthor_Click"></asp:Button>
+            <div class="col-lg-10 col-lg-offset-2">
+                <asp:Button runat="server" ID="CreateAuthor" class="btn btn-primary" OnClick="CreateAuthor_Click" Text="Add"></asp:Button>
+                <asp:Button runat="server" ID="CancelButton" class="btn btn-default" OnClick="CancelButton_Click" Text="Cancel"></asp:Button>
             </div>
         </div>
     </fieldset>
