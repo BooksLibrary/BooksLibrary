@@ -27,13 +27,15 @@ namespace BooksLibrary.Web.Authors
         //     string sortByExpression
         public IQueryable<Author> AuthorsGridView_GetData()
         {
-            return this.authors.All();
-        }
+            var substring = Request.QueryString["byName"];
 
-        protected void AuthorsGridView_PageIndexChanged(object sender, EventArgs e)
-        {
-            var page = AuthorsGridView.PageIndex;
-            var pageSize = AuthorsGridView.PageSize;
+            if (Request.QueryString["byName"] != null)
+            {
+                return this.authors.All()
+                    .Where(a => a.Name.Contains(substring));
+            }
+
+            return this.authors.All();
         }
     }
 }

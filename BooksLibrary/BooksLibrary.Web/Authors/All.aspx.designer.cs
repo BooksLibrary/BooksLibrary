@@ -13,12 +13,12 @@ namespace BooksLibrary.Web.Authors {
     public partial class All1 {
         
         /// <summary>
-        /// AuthorsGridView control.
+        /// AuthorsListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AuthorsGridView;
+        protected global::System.Web.UI.WebControls.ListView AuthorsListView;
     }
 }

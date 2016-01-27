@@ -203,7 +203,6 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\Authors\Insert.aspx" />
     <Content Include="Admin\Books\All.aspx" />
-    <Content Include="Admin\Books\Details.aspx" />
     <Content Include="Admin\Books\Insert.aspx" />
     <Content Include="App_Data\home.jpg" />
     <Content Include="Authors\All.aspx" />
@@ -430,13 +429,6 @@
     </Compile>
     <Compile Include="Admin\Books\All.aspx.designer.cs">
       <DependentUpon>All.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Books\Details.aspx.cs">
-      <DependentUpon>Details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Books\Details.aspx.designer.cs">
-      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Books\Insert.aspx.cs">
       <DependentUpon>Insert.aspx</DependentUpon>

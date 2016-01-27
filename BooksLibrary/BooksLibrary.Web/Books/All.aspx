@@ -27,7 +27,7 @@
                         <p class="group inner list-group-item-text"><%# Item.Description  %></p>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
-                                <a class="btn btn-info" href="/Books/Details?id= <%#:Item.Id %>">Book Details</a>
+                                <a class="btn btn-info" href="/Books/Details?id=<%#:Item.Id %>">Book Details</a>
                             </div>
                         </div>
                     </div>

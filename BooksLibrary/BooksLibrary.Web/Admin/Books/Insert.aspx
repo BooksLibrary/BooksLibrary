@@ -7,12 +7,16 @@
             <label for="TitleInput" class="col-lg-2 control-label">Title</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="TitleInput" placeholder="Name" runat="server">
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ControlToValidate="TitleInput" ErrorMessage="Book title is required." class="text-primary"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="TitleInput" ValidationExpression="^.{1,50}$" runat="server" ErrorMessage="Book title must be between 1 and 50 characters!" class="text-primary"></asp:RegularExpressionValidator>
             </div>
         </div>
         <div class="form-group">
             <label for="DescriptionInput" class="col-lg-2 control-label">Description</label>
             <div class="col-lg-10">
                 <textarea class="form-control" rows="3" id="DescriptionInput" runat="server"></textarea>
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ControlToValidate="DescriptionInput" ErrorMessage="Book title is required." class="text-primary"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="DescriptionInput" ValidationExpression="^.{5,500}$" runat="server" ErrorMessage="Book description must be between 5 and 500 characters!" class="text-primary"></asp:RegularExpressionValidator>
             </div>
         </div>
         <div class="form-group">

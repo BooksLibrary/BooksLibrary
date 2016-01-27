@@ -1,9 +1,35 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="All.aspx.cs" Inherits="BooksLibrary.Web.Authors.All1" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <asp:ListView runat="server">
+    <asp:ListView runat="server" ID="AuthorsListView" ItemType="BooksLibrary.Models.Author" DataKeyNames="Id"
+        SelectMethod="AuthorsGridView_GetData">
+        <LayoutTemplate>
+            <table class="table table-striped table-hover">
+                <tr runat="server" id="itemplaceholder"></tr>
+            </table>
+            <asp:DataPager runat="server" PagedControlID="AuthorsListView">
+                <Fields>
+                    <asp:NumericPagerField ButtonType="Link" />
+                </Fields>
+            </asp:DataPager>
+        </LayoutTemplate>
+        <ItemTemplate>
+            <tr runat="server">
+                <td>
+                    <asp:Image runat="server" ImageUrl="<%# Item.ImageUrl %>" AlternateText="No Image" Height="100"/></td>
+                <td>
+                    <asp:Literal runat="server" Text="<%# Item.Name %>" /></td>
+                <td>
+                    <asp:Literal runat="server" Text="<%# Item.Info %>" /></td>
+                <td>
+                    <a class="btn btn-info" href="/books/all?author=<%# Item.Id %>">Books</a>
+                </td>
+            </tr>
+        </ItemTemplate>
     </asp:ListView>
-    <asp:GridView runat="server" ID="AuthorsGridView" AutoGenerateColumns="False" DataKeyNames="Id" class="table table-striped table-hover"
+</asp:Content>
+
+<%--<asp:GridView runat="server" ID="AuthorsGridView" AutoGenerateColumns="False" DataKeyNames="Id" class="table table-striped table-hover"
         SelectMethod="AuthorsGridView_GetData"
         AllowPaging="True"
         AllowSorting="True"
@@ -21,8 +47,7 @@
                 <ControlStyle Width="200px" />
             </asp:BoundField>
             <asp:BoundField DataField="Info" HeaderText="Author Info"></asp:BoundField>
-            <asp:HyperLinkField Text="Books" NavigateUrl='/books/all?authorId=<% Eval("Id") %>' runat="server" />
+            <asp:HyperLinkField Text="Books" NavigateUrl='/books/all?authorId=<%# Eval("Id") %>' runat="server" />
         </Columns>
         <PagerSettings PageButtonCount="5" />
-    </asp:GridView>
-</asp:Content>
+    </asp:GridView>--%>

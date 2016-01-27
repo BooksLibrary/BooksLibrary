@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using Error_Handler_Control;
+using System.Data.Entity.Validation;
 
 namespace BooksLibrary.Web.Admin.Books
 {
@@ -35,26 +37,36 @@ namespace BooksLibrary.Web.Admin.Books
 
         protected void AddBook(object sender, EventArgs e)
         {
-            var book = new Book
+            try
             {
-                Title = this.TitleInput.Value,
-                Description = this.DescriptionInput.Value,
-                AuthorId = int.Parse(this.BookAuthorInput.SelectedValue),
-                CategoryId = int.Parse(CategoryInput.SelectedValue),
-                DateAdded = DateTime.Now
-            };
+                var book = new Book
+                {
+                    Title = this.TitleInput.Value,
+                    Description = this.DescriptionInput.Value,
+                    AuthorId = int.Parse(this.BookAuthorInput.SelectedValue),
+                    CategoryId = int.Parse(CategoryInput.SelectedValue),
+                    DateAdded = DateTime.Now
+                };
 
-            if (this.FileInput.HasFile)
-            {
-                var fileName = Guid.NewGuid();
-                var extension = this.FileInput.FileName.Substring(this.FileInput.FileName.LastIndexOf("."));
-                var saveToPath = "~/Uploads/books/" + fileName + extension;
-                this.FileInput.SaveAs(MapPath(saveToPath));
-                book.FileUrl = saveToPath;
+                if (this.FileInput.HasFile)
+                {
+                    var fileName = Guid.NewGuid();
+                    var extension = this.FileInput.FileName.Substring(this.FileInput.FileName.LastIndexOf("."));
+                    var saveToPath = "~/Uploads/books/" + fileName + extension;
+                    this.FileInput.SaveAs(MapPath(saveToPath));
+                    book.FileUrl = saveToPath;
+                }
+
+                this.books.Add(book);
+                this.books.SaveChanges();
+                ErrorSuccessNotifier.AddSuccessMessage("Book successfully added!");
+                Response.Redirect("/books/details?id=" + book.Id);
+                return;
             }
-
-            this.books.Add(book);
-            this.books.SaveChanges();
+            catch (DbEntityValidationException ex)
+            {
+                ErrorSuccessNotifier.AddErrorMessage(ex.Message);
+            }
         }
 
         public void Cancel(object sender, EventArgs e)
