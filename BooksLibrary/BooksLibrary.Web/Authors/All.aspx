@@ -3,7 +3,21 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:ListView runat="server" ID="AuthorsListView" ItemType="BooksLibrary.Models.Author" DataKeyNames="Id"
         SelectMethod="AuthorsGridView_GetData">
+        <EmptyDataTemplate>
+            <h1>No Authors to display.</h1>
+        </EmptyDataTemplate>
         <LayoutTemplate>
+            <br />
+            <asp:Button runat="server" ID="SortByNameButton" CommandArgument="Name" CommandName="Sort" Text="Sort by name" CssClass="btn btn-primary col-md-2" />
+            <div class="form-group col-md-4 pull-right">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <asp:TextBox runat="server" ID="FilterByNameInput" class="form-control"></asp:TextBox>
+                    <span class="input-group-btn">
+                        <asp:Button runat="server" class="btn btn-default" type="button" id="FilterByNameButton" onclick="FilterByNameButtonClick" Text="Filter"/>
+                    </span>
+                </div>
+            </div>
             <table class="table table-striped table-hover">
                 <tr runat="server" id="itemplaceholder"></tr>
             </table>
@@ -16,7 +30,7 @@
         <ItemTemplate>
             <tr runat="server">
                 <td>
-                    <asp:Image runat="server" ImageUrl="<%# Item.ImageUrl %>" AlternateText="No Image" Height="100"/></td>
+                    <asp:Image runat="server" ImageUrl="<%# Item.ImageUrl %>" AlternateText="No Image" Height="100" /></td>
                 <td>
                     <asp:Literal runat="server" Text="<%# Item.Name %>" /></td>
                 <td>
@@ -28,26 +42,3 @@
         </ItemTemplate>
     </asp:ListView>
 </asp:Content>
-
-<%--<asp:GridView runat="server" ID="AuthorsGridView" AutoGenerateColumns="False" DataKeyNames="Id" class="table table-striped table-hover"
-        SelectMethod="AuthorsGridView_GetData"
-        AllowPaging="True"
-        AllowSorting="True"
-        OnPageIndexChanged="AuthorsGridView_PageIndexChanged"
-        PageSize="5">
-        <EmptyDataTemplate>
-            <h1>There are no authors yet!</h1>
-        </EmptyDataTemplate>
-        <Columns>
-            <asp:ImageField DataImageUrlField="ImageUrl" HeaderText="Image" ControlStyle-CssClass="author-thumbnail" NullImageUrl="~/Uploads/authorImages/default.jpg">
-                <ControlStyle CssClass="author-thumbnail"></ControlStyle>
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-            </asp:ImageField>
-            <asp:BoundField DataField="Name" HeaderText="Author Name" SortExpression="Name">
-                <ControlStyle Width="200px" />
-            </asp:BoundField>
-            <asp:BoundField DataField="Info" HeaderText="Author Info"></asp:BoundField>
-            <asp:HyperLinkField Text="Books" NavigateUrl='/books/all?authorId=<%# Eval("Id") %>' runat="server" />
-        </Columns>
-        <PagerSettings PageButtonCount="5" />
-    </asp:GridView>--%>

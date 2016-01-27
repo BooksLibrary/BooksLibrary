@@ -60,5 +60,5 @@
             </tr>
         </ItemTemplate>
     </asp:ListView>
-    <span style="clear: both"></span>
+    <div class="col-md-2 pull-right"></div>
 </asp:Content>

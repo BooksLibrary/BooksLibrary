@@ -37,5 +37,11 @@ namespace BooksLibrary.Web.Authors
 
             return this.authors.All();
         }
+
+        public void FilterByNameButtonClick(object sender, EventArgs e)
+        {
+            var substring = (this.AuthorsListView.FindControl("FilterByNameInput") as TextBox).Text;
+            Response.Redirect("/authors/all?byName=" + substring);
+        }
     }
 }
