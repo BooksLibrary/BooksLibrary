@@ -203,6 +203,7 @@
     <Content Include="Admin\Books\All.aspx" />
     <Content Include="Admin\Books\Details.aspx" />
     <Content Include="Admin\Books\Insert.aspx" />
+    <Content Include="App_Data\home.jpg" />
     <Content Include="Authors\All.aspx" />
     <Content Include="Authors\Details.aspx" />
     <Content Include="Books\All.aspx" />
@@ -550,9 +551,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BooksLibrary.Data\BooksLibrary.Data.csproj">
       <Project>{e89e39f2-d561-46bf-a29d-66add167b2ea}</Project>
