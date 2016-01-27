@@ -13,7 +13,7 @@
                             <p><%#: Item.Description %></p>
                         </div>
                         <div>
-                            <asp:Button Text="Read" CssClass="btn btn-primary" runat="server" />
+                            <a href="ReadBook?id=<%#:Item.Id %>" class="btn btn-primary">Read</a>
                             <asp:Button Text="Remove" CssClass="btn btn-danger" ID="btnRemove" OnCommand="RemoveFromMyLib" CommandArgument="<%#: Item.Id %>" runat="server" />
                         </div>
                     </div>
