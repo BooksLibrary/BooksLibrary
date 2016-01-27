@@ -21,10 +21,17 @@ namespace BooksLibrary.Web.Authors
 
         // The id parameter should match the DataKeyNames value set on the control
         // or be decorated with a value provider attribute, e.g. [QueryString]int id
-        public object AuthorDetailsView_GetItem()
+        public Author AuthorDetailsView_GetItem()
         {
-            var id = int.Parse(Request.QueryString["id"]);
-            return this.authors.GetById(id);
+            var idAsString = this.Request.QueryString["id"];
+            if (idAsString == null) return null;
+            int id;
+            if (int.TryParse(idAsString, out id))
+            {
+                return this.authors.GetById(id);
+            }
+
+            return null;
         }
     }
 }

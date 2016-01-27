@@ -1,26 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Details.aspx.cs" Inherits="BooksLibrary.Web.Authors.Details" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Details.aspx.cs" Inherits="BooksLibrary.Web.Authors.Details1" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <asp:DetailsView runat="server" ID="AuthorDetailsViewPublic" ItemType="BooksLibrary.Models.Author"
-        DataKeyNames="Id"
-        AutoGenerateRows="False"
+    <asp:FormView runat="server" ID="AuthorDetailsFormview"
         SelectMethod="AuthorDetailsView_GetItem"
-        UpdateMethod="AuthorDetailsView_UpdateItem"
-        DeleteMethod="AuthorDetailsView_DeleteItem"
-        BorderStyle="None">
-        <Fields>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <div class="jumbotron">
-                        <h1><%#: Item.Name %></h1>
-                        <asp:Image ImageUrl="<%# this.GetImageUrl() %>" runat="server" ID="AuthorImageContainer"></asp:Image>
-                        <p><%#: Item.Info %></p>
-                        <asp:Button runat="Server" Text="Edit" CommandName="Edit" class="btn btn-primary" />
-                        <asp:Button runat="Server" Text="Delete" CommandName="Delete" class="btn btn-danger " />
-                        <asp:LinkButton runat="Server" Text="Cancel" PostBackUrl="~/Authors/All.aspx" class="btn btn-default" />
-                    </div>
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Fields>
-    </asp:DetailsView>
+        ItemType="BooksLibrary.Models.Author">
+        <ItemTemplate>
+            <div class="jumbotron col-md-8 col-md-offset-5">
+                <asp:Image runat="server" ImageUrl="<%# Item.ImageUrl %>" Height="200" AlternateText="No Image"/>
+                <h1><%#:Item.Name %></h1>
+                <p><%#:Item.Info %></p>
+                <p><a class="btn btn-primary btn-lg" href="/books/all?author=<%# Item.Id %>">Books</a></p>
+            </div>
+        </ItemTemplate>
+    </asp:FormView>
 </asp:Content>

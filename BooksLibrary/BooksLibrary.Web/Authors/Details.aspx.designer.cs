@@ -10,15 +10,15 @@
 namespace BooksLibrary.Web.Authors {
     
     
-    public partial class Details {
+    public partial class Details1 {
         
         /// <summary>
-        /// AuthorDetailsViewPublic control.
+        /// AuthorDetailsFormview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView AuthorDetailsViewPublic;
+        protected global::System.Web.UI.WebControls.FormView AuthorDetailsFormview;
     }
 }
