@@ -194,6 +194,7 @@
     <Content Include="Account\ManagePersonalInfo.aspx" />
     <Content Include="Account\MyLib.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\ReadBook.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
@@ -364,6 +365,13 @@
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ReadBook.aspx.cs">
+      <DependentUpon>ReadBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ReadBook.aspx.designer.cs">
+      <DependentUpon>ReadBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
