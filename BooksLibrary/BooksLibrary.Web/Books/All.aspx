@@ -9,6 +9,18 @@
         DataKeyNames="Id"
         runat="server">
         <LayoutTemplate>
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <asp:LinkButton Text="Sort By Title" CommandArgument="Title" CssClass="btn btn-default" CommandName="Sort" runat="server" />
+                        <asp:LinkButton Text="Sort By Date" CommandArgument="DateAdded" CssClass="btn btn-default" CommandName="Sort" runat="server" />
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 pull-right">
+                        <asp:TextBox ID="tbFilter" placeholder="Filter By Title" CssClass="form-control" runat="server" />
+                        <asp:Button Text="Filter" OnClick="Filter" ID="btnFilter" CssClass="btn btn-default" runat="server" />
+                    </div>
+                </div>
+            </div>
             <div id="portfolio" class="row">
                 <div class="col-md-3" runat="server" id="itemPlaceholder"></div>
             </div>
@@ -25,6 +37,7 @@
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading"><%# Item.Title  %></h4>
                         <p class="group inner list-group-item-text"><%# Item.Description  %></p>
+                        <p class="group inner list-group-item-text">Added: <%# Item.DateAdded  %></p>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <a class="btn btn-info" href="/Books/Details?id=<%#:Item.Id %>">Book Details</a>
