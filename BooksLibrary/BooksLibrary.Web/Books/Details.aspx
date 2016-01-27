@@ -36,7 +36,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <asp:Button ID="btnAdd" runat="Server" Text="Add to MyLib" class="btn btn-primary" />
+                        <asp:Button ID="btnAdd" OnClick="AddBookToMyLib" runat="Server" Text="Add to MyLib" class="btn btn-primary" />
                     </div>
                 </div>
             </div>

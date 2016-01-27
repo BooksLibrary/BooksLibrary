@@ -192,7 +192,9 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\ManagePersonalInfo.aspx" />
+    <Content Include="Account\MyLib.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\ReadBook.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
@@ -286,6 +288,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
@@ -351,12 +354,26 @@
     <Compile Include="Account\ManagePersonalInfo.aspx.designer.cs">
       <DependentUpon>ManagePersonalInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\MyLib.aspx.cs">
+      <DependentUpon>MyLib.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\MyLib.aspx.designer.cs">
+      <DependentUpon>MyLib.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ReadBook.aspx.cs">
+      <DependentUpon>ReadBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ReadBook.aspx.designer.cs">
+      <DependentUpon>ReadBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
