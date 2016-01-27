@@ -50,3 +50,8 @@ input[type="select"] {
 .author-thumbnail {
     height: 100px;
 }
+
+#myLibContainer img{
+    width: 800px;
+    height: 300px;
+}
