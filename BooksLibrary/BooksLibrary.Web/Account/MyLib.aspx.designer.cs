@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BooksLibrary.Web {
+namespace BooksLibrary.Web.Account {
     
     
-    public partial class SiteMaster {
+    public partial class MyLib {
         
         /// <summary>
-        /// ErrorSuccessNotifier control.
+        /// RepeaterBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Error_Handler_Control.ErrorSuccessNotifier ErrorSuccessNotifier;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterBooks;
     }
 }

@@ -1,5 +1,7 @@
-﻿using BooksLibrary.Models;
+﻿using BooksLibrary.Data;
+using BooksLibrary.Models;
 using ChatSystem.Data.Repository;
+using Error_Handler_Control;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,14 +14,18 @@ namespace BooksLibrary.Web.Books
 {
     public partial class Details : System.Web.UI.Page
     {
+        private const int MaxBooksCount = 2;
         private const int PageSize = 4;
         private IRepository<Book> books;
         private IRepository<Comment> comments;
+        private IRepository<User> users;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.books = new EfGenericRepository<Book>(new Data.BooksLibraryDbContext());
-            this.comments = new EfGenericRepository<Comment>(new Data.BooksLibraryDbContext());
+            var dbContext = new BooksLibraryDbContext();
+            this.books = new EfGenericRepository<Book>(dbContext);
+            this.comments = new EfGenericRepository<Comment>(dbContext);
+            this.users = new EfGenericRepository<User>(dbContext);
             this.BindComments(0);
 
             if (!this.User.Identity.IsAuthenticated)
@@ -29,7 +35,7 @@ namespace BooksLibrary.Web.Books
 
             this.tbComment.Text = string.Empty;
         }
-        
+
         public Book BookDetailsView_GetItem()
         {
 
@@ -46,6 +52,46 @@ namespace BooksLibrary.Web.Books
             Response.Redirect("~/ErrorPages/NotFound.aspx");
 
             return null;
+        }
+
+        protected void AddBookToMyLib(object sender, EventArgs e)
+        {
+            if (!Request.IsAuthenticated)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("You need to be authenticated to add books!");
+                return;
+            }
+
+            var currentUser = this.users.GetById(this.User.Identity.GetUserId());
+
+            if (currentUser.Books.Count >= MaxBooksCount)
+            {
+                ErrorSuccessNotifier.AddErrorMessage(string.Format("Cannot have more than {0} books in your library!", MaxBooksCount));
+                return;
+            }
+
+
+            var queryId = Request.QueryString["id"];
+
+            var id = this.ParseId(queryId);
+
+            if (id == null)
+            {
+                Response.Redirect("~/ErrorPages/NotFound.aspx");
+                return;
+            }
+
+            var bookToAdd = this.books.GetById(id);
+
+            if (bookToAdd != null)
+            {
+                currentUser.Books.Add(bookToAdd);
+                this.users.SaveChanges();
+            }
+
+            ErrorSuccessNotifier.AddSuccessMessage("The book was successfully added.");
+            Response.Redirect("~/Account/MyLib.aspx");
+
         }
 
         protected void Next(object sender, EventArgs e)

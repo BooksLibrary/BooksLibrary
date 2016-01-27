@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BooksLibrary.Web.SiteMaster" %>
 
+<%@ Register src="~/Controls/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx"
+    tagname="ErrorSuccessNotifier" tagprefix="userControls" %>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -102,6 +105,7 @@
                 </div>
             </div>
         </div>
+        <userControls:ErrorSuccessNotifier ID="ErrorSuccessNotifier" runat="server" />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

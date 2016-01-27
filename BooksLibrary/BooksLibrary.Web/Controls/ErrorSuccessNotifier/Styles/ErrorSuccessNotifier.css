@@ -9,6 +9,7 @@
 	box-shadow: 2px 2px 3px #3A4F63;
     border-radius: 4px;
     position: absolute;
+    z-index: 10000;
     top: 0;
     right: 0;
 }
