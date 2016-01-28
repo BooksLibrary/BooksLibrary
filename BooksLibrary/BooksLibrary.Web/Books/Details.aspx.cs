@@ -33,7 +33,7 @@ namespace BooksLibrary.Web.Books
                 this.addCommentContainer.Attributes.Add("style", "display:none");
             }
 
-            this.tbComment.Text = string.Empty;
+            //this.tbComment.Text = string.Empty;
         }
 
         public Book BookDetailsView_GetItem()
@@ -143,6 +143,8 @@ namespace BooksLibrary.Web.Books
 
             this.comments.Add(comment);
             this.comments.SaveChanges();
+            this.tbComment.Text = string.Empty;
+            this.Prev(new object(), new EventArgs());
         }
 
         private int? ParseId(string queryId)
