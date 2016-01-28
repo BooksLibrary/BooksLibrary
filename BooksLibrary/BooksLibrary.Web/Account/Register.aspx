@@ -22,8 +22,9 @@
             <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                <asp:RequiredFieldValidator Display="Dynamic" runat="server" ControlToValidate="Password"
                     CssClass="text-danger" ErrorMessage="The password field is required." />
+                <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="Password must be atleast 6 characters." ValidationExpression="^.{6,}$" />
             </div>
         </div>
         <div class="form-group">

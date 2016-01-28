@@ -26,7 +26,7 @@ namespace BooksLibrary.Web.Admin.Users
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable UsersListView_GetData()
+        public IQueryable<User> UsersListView_GetData()
         {
             return this.users.All();
         }
