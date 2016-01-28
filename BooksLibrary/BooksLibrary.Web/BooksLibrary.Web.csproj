@@ -192,6 +192,7 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\ManagePersonalInfo.aspx" />
+    <Content Include="Admin\Users\All.aspx" />
     <Content Include="Books\MyLib.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Books\ReadBook.aspx" />
@@ -352,6 +353,13 @@
     </Compile>
     <Compile Include="Account\ManagePersonalInfo.aspx.designer.cs">
       <DependentUpon>ManagePersonalInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\All.aspx.cs">
+      <DependentUpon>All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\All.aspx.designer.cs">
+      <DependentUpon>All.aspx</DependentUpon>
     </Compile>
     <Compile Include="Books\MyLib.aspx.cs">
       <DependentUpon>MyLib.aspx</DependentUpon>
