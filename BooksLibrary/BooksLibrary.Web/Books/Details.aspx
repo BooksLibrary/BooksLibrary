@@ -13,7 +13,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <img src="http://www.text2image.com/user_images/text2image_T84439_20160123_153545.jpg" alt="Alternate Text" />
+                        <img src="<%#:Item.ImageUrl %>" alt="Alternate Text" />
                     </div>
                 </div>
                 <div class="row">

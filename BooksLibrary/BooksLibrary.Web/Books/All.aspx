@@ -33,10 +33,9 @@
         <ItemTemplate>
             <div class="item  col-xs-4 col-lg-4">
                 <div class="thumbnail">
-                    <img class="group list-group-image" src="http://www.text2image.com/user_images/text2image_T84439_20160123_153545.jpg" alt="">
+                    <img class="group list-group-image" src="<%#:Item.ImageUrl %>" alt="">
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading"><%# Item.Title  %></h4>
-                        <p class="group inner list-group-item-text"><%# Item.Description  %></p>
                         <p class="group inner list-group-item-text">Category: <%# Item.Category.Name  %></p>
                         <p class="group inner list-group-item-text">Author: <%# Item.Author.Name  %></p>
                         <p class="group inner list-group-item-text">Added: <%# Item.DateAdded  %></p>

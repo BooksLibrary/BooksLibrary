@@ -15,6 +15,7 @@ namespace BooksLibrary.Web.Admin.Books
 {
     public partial class Insert : System.Web.UI.Page
     {
+        private const string DefaultImageUrl = "http://www.text2image.com/user_images/text2image_T84439_20160123_153545.jpg";
         IRepository<Book> books = new EfGenericRepository<Book>(new BooksLibraryDbContext());
         IRepository<Author> authors = new EfGenericRepository<Author>(new BooksLibraryDbContext());
         IRepository<Category> categories = new EfGenericRepository<Category>(new BooksLibraryDbContext());
@@ -39,10 +40,18 @@ namespace BooksLibrary.Web.Admin.Books
         {
             try
             {
+                var imageUrl = this.BookImageInput.Value;
+
+                if (string.IsNullOrEmpty(imageUrl))
+                {
+                    imageUrl = DefaultImageUrl;
+                }
+
                 var book = new Book
                 {
                     Title = this.TitleInput.Value,
                     Description = this.DescriptionInput.Value,
+                    ImageUrl = imageUrl,
                     AuthorId = int.Parse(this.BookAuthorInput.SelectedValue),
                     CategoryId = int.Parse(CategoryInput.SelectedValue),
                     DateAdded = DateTime.Now

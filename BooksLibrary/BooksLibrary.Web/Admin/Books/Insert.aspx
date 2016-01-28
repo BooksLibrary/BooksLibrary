@@ -20,6 +20,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="BookImageInput" class="col-lg-2 control-label">Image Url</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="BookImageInput" placeholder="Image Url" runat="server">
+            </div>
+        </div>
+        <div class="form-group">
             <label for="BookAuthorInput" class="col-lg-2 control-label">Author</label>
             <div class="col-lg-10">
                 <asp:DropDownList ID="BookAuthorInput" DataValueField="Id" DataTextField="Name" class="form-control" SelectMethod="GetAuthors" runat="server"></asp:DropDownList>
