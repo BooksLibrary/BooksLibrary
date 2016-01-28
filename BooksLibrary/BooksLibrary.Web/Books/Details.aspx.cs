@@ -90,7 +90,7 @@ namespace BooksLibrary.Web.Books
             }
 
             ErrorSuccessNotifier.AddSuccessMessage("The book was successfully added.");
-            Response.Redirect("~/Account/MyLib.aspx");
+            Response.Redirect("~/Books/MyLib.aspx");
 
         }
 
