@@ -35,10 +35,10 @@
                 <div class="thumbnail">
                     <img class="group list-group-image" src="<%#:Item.ImageUrl %>" alt="">
                     <div class="caption">
-                        <h4 class="group inner list-group-item-heading"><%# Item.Title  %></h4>
-                        <p class="group inner list-group-item-text">Category: <%# Item.Category.Name  %></p>
-                        <p class="group inner list-group-item-text">Author: <%# Item.Author.Name  %></p>
-                        <p class="group inner list-group-item-text">Added: <%# Item.DateAdded  %></p>
+                        <h4 class="group inner list-group-item-heading"><%#: Item.Title  %></h4>
+                        <p class="group inner list-group-item-text">Category: <%#: Item.Category.Name  %></p>
+                        <p class="group inner list-group-item-text">Author: <%#: Item.Author.Name  %></p>
+                        <p class="group inner list-group-item-text">Added: <%#: Item.DateAdded  %></p>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <a class="btn btn-info" href="/Books/Details?id=<%#:Item.Id %>">Book Details</a>

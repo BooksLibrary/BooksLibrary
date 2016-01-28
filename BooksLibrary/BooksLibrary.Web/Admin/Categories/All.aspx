@@ -23,7 +23,7 @@
         </LayoutTemplate>
         <ItemTemplate>
             <tr runat="server">
-                <td><%# Item.Name  %></td>
+                <td><%#: Item.Name  %></td>
                 <td>
                     <asp:LinkButton runat="Server" Text="Edit" CommandName="Edit" />
                 </td>

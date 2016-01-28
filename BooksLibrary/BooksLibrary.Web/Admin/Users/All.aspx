@@ -7,7 +7,7 @@
         <LayoutTemplate>
             <div>
                 <h1>Users</h1>
-                <asp:Button runat="server" CommandName="Sort" CommandArgument="Username" Text="Sort by Username" class="btn btn-primary" />
+                <asp:Button runat="server" CommandName="Sort" CommandArgument="Username" Text="Sort by Username" class="btn btn-primary pull-right" />
                 <br />
                 <br />
             </div>
@@ -24,7 +24,7 @@
             <tr>
                 <th><%#: Item.UserName %></th>
                 <th>
-                    <asp:Button runat="server" ID="DeleteButton" Text="Delete" OnClick="UsersListView_DeleteItem" CommandArgument="<%# Item.Id %>" class="btn btn-danger" /></th>
+                    <asp:Button runat="server" ID="DeleteButton" Text="Delete" OnClick="UsersListView_DeleteItem" CommandArgument="<%# Item.Id %>" class="btn btn-danger pull-right" /></th>
             </tr>
         </ItemTemplate>
     </asp:ListView>
