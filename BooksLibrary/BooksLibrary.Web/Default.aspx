@@ -60,5 +60,5 @@
             </tr>
         </ItemTemplate>
     </asp:ListView>
-    <div class="col-md-2 pull-right"></div>
+    <div class="clearfix"></div>
 </asp:Content>
