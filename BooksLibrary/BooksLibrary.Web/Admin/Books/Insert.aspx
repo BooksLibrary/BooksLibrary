@@ -45,7 +45,7 @@
         <div class="form-group">
             <label for="DescriptionInput" class="col-lg-2 control-label">File</label>
             <div class="col-lg-10">
-                <asp:FileUpload runat="server" class="form-control" ID="FileInput" />
+                <asp:FileUpload accept="application/pdf" runat="server" class="form-control" ID="FileInput" />
                 <br />
             </div>
         </div>
