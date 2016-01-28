@@ -78,6 +78,8 @@
                                                 <li><a href="/admin/authors/insert">Add Author</a></li>
                                                 <li class="divider"></li>
                                                 <li><a href="/admin/categories/all">Categories</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="/admin/users/all">Users</a></li>
                                             </ul>
                                         </li>
                                     </ul>
