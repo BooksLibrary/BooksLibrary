@@ -61,7 +61,7 @@ namespace BooksLibrary.Data.Migrations
         {
             if (context.Authors.FirstOrDefault() == null)
             {
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < 1; i++)
                 {
                     var author = new Author { Name = "Author " + (i + 1), Info = $"Author description {i}" };
                     context.Authors.Add(author);
@@ -86,7 +86,7 @@ namespace BooksLibrary.Data.Migrations
                         .Select(c => c.Id)
                         .ToArray();
 
-                for (int i = 0; i < 100; i++)
+                for (int i = 0; i < 1; i++)
                 {
                     var book = new Book
                     {
@@ -94,6 +94,7 @@ namespace BooksLibrary.Data.Migrations
                         Description = $"Book desription {i}",
                         CategoryId = categoryIds[random.Next(0, categoryIds.Count())],
                         AuthorId = authorIds[random.Next(0, authorIds.Count())],
+                        ImageUrl = "http://www.text2image.com/user_images/text2image_T84439_20160123_153545.jpg",
                         DateAdded = new DateTime(random.Next(1950, 2016), random.Next(1, 13), random.Next(1, 29))
                     };
 

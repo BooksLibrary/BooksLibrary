@@ -26,6 +26,10 @@ namespace BooksLibrary.Models
         [MaxLength(500)]
         public string Description { get; set; }
 
+        [Required]
+        [MaxLength(300)]
+        public string ImageUrl { get; set; }
+
         public string FileUrl { get; set; }
 
         [Required]
