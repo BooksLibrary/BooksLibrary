@@ -7,7 +7,7 @@
         <LayoutTemplate>
             <div>
                 <h1>Users</h1>
-                <asp:Button runat="server" CommandName="Sort" CommandArgument="Title" Text="Sort by Username" class="btn btn-primary" />
+                <asp:Button runat="server" CommandName="Sort" CommandArgument="Username" Text="Sort by Username" class="btn btn-primary" />
                 <br />
                 <br />
             </div>
