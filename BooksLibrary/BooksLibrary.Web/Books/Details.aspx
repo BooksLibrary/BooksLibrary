@@ -36,7 +36,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <asp:Button ID="btnAdd" OnClick="AddBookToMyLib" runat="Server" Text="Add to MyLib" class="btn btn-primary" />
+                        <asp:Button ID="btnAdd" CausesValidation="false" OnClick="AddBookToMyLib" runat="Server" Text="Add to MyLib" class="btn btn-primary" />
                     </div>
                 </div>
             </div>
@@ -50,6 +50,8 @@
             <h3>Add Comment:</h3>
             <div class="col-lg-2">
                 <asp:TextBox ID="tbComment" runat="server" />
+                <asp:RequiredFieldValidator Display="Dynamic" CssClass="text-danger" ErrorMessage="The comment text is required!" ControlToValidate="tbComment" runat="server" />
+                <asp:RegularExpressionValidator Display="Dynamic" CssClass="text-danger" ValidationExpression="^.{2,}$" ErrorMessage="Comment must be atleast 2 symbols!" ControlToValidate="tbComment" runat="server" />
             </div>
             <div class="col-lg-2">
                 <asp:Button CssClass="btn btn-primary" ID="btnAddComment" OnClick="AddComment" Text="Add" runat="server" />

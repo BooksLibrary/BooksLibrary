@@ -225,6 +225,7 @@
     <Content Include="Controls\ErrorSuccessNotifier\Scripts\jquery-1.3.2.js" />
     <Content Include="Controls\ErrorSuccessNotifier\Styles\ErrorSuccessNotifier.css" />
     <Content Include="ErrorPages\NotFound.aspx" />
+    <Content Include="ErrorPages\ServerError.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -523,6 +524,13 @@
     </Compile>
     <Compile Include="ErrorPages\NotFound.aspx.designer.cs">
       <DependentUpon>NotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\ServerError.aspx.cs">
+      <DependentUpon>ServerError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\ServerError.aspx.designer.cs">
+      <DependentUpon>ServerError.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

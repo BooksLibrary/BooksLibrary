@@ -144,7 +144,7 @@ namespace BooksLibrary.Web.Books
             this.comments.Add(comment);
             this.comments.SaveChanges();
             this.tbComment.Text = string.Empty;
-            this.Prev(new object(), new EventArgs());
+            Response.Redirect(Request.RawUrl);
         }
 
         private int? ParseId(string queryId)
